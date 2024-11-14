@@ -7,6 +7,14 @@
     "routes": [
       { "src": "/api/(.*)", "dest": "server/server.js" },
       { "src": "/(.*)", "dest": "client/dist/$1" }
-    ]
+    ],
+    "build": {
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "commands": {
+        "build": "cd client && npm install && npm run build && cd .. && cd server && npm install"
+      }
+    }
   }
   
